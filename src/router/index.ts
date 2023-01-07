@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ProfileView from '../views/ProfileView.vue'
+import ScheduleView from '../views/ScheduleView.vue'
+import OverviewView from '../views/OverviewView.vue'
+import ChatView from '../views/ChatView.vue'
+import SettingsView from '../views/SettingsView.vue'
+
 
 Vue.use(VueRouter)
 
@@ -11,13 +17,30 @@ const routes: Array<RouteConfig> = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/profile',
+    name: 'profile',
+    component: ProfileView
+  },
+  {
+    path: '/schedule',
+    name: 'schedule',
+    component: ScheduleView
+  },
+  {
+    path: '/overview',
+    name: 'overview',
+    component: OverviewView
+  },
+  {
+    path: '/chat',
+    name: 'chat',
+    component: ChatView
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: SettingsView
+  },
 ]
 
 const router = new VueRouter({
