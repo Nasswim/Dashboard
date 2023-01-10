@@ -5,7 +5,7 @@
           <img src="@/assets/logo.png" alt="logo" />
         </v-avatar>
         <v-list class="mt-7">
-          <v-list-item v-bind:class="{'white--text': item.path === $route.path}" class="mb-5" v-for="item in items" :key="item.title" link :to="item.path">
+          <v-list-item  class="mb-5" v-for="item in items" :key="item.title" link :to="item.path" v-bind:style="{color: '#fff', textShadow: '0 0 5px rgba(255,255,255,0.5)'}">
             <v-list-item-icon>
               <v-icon color="grey">{{ item.icon }}</v-icon>
             </v-list-item-icon>
