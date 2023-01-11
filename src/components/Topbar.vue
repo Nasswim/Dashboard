@@ -1,7 +1,7 @@
 <template>
   <v-app-bar class="ma-8" color="white" flat>
-    <v-row>
-      <h1>Schedule</h1>
+    <v-row class="justify-space-between">
+      <h1 class="ma-9 ">Schedule</h1>
     </v-row>
     <v-row class="ml-15 mb-2">
       <span class="caption mr-2">Aug 5, 2021</span>
