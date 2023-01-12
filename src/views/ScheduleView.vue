@@ -108,7 +108,7 @@
                         </v-card>
                         <div class="mr-auto">
                           <p
-                            class="text-h5 text--primary"
+                            class="text-h5 text--primary font-weight-bold"
                             :class="{ 'text--lighten-1': selected }"
                           >
                             {{ item.titre }}
@@ -170,115 +170,144 @@
         </v-col>
 
         <v-col cols="6">
-          <v-row>
-            <v-row justify="space-between">
-              <h2 class="mt-3">Meeting</h2>
-              <span>Aug 3, 2021 - Aug 7, 2021</span>
-            </v-row>
-            <v-row>
-              <v-card color="#FDF7F2" class="rounded-xl">
-                <v-card-text>
-                  <v-list color="transparent">
-                    <v-list-item
-                      v-for="(item, i) in items"
-                      :key="i"
-                      class="mt-6 mb-10 d-inline-flex"
-                      style="max-width: 20%"
-                    >
-                      <v-card
-                        class="rounded-xl elevation-0"
-                        height="350"
-                        color="transparent"
-                        v-bind:class="{ selected: selected }"
-                        v-on:mouseover="selected = true"
-                        v-on:mouseout="selected = false"
-                      >
-                        <v-card-text>
-                          <div class="d-flex flex-column">
-                            <v-card
-                              width="80"
-                              class="rounded-lg mb-6"
-                              color="#FBE9E7"
-                            >
-                              <v-card-text
-                                class="d-flex align-center justify-center"
-                              >
-                                <span class="text-center display-1 font-weight-bold">{{ item.title }}</span>
-                              </v-card-text>
-                            </v-card>
-                            <div class="text-center mb-12">
-                              <p class="text-h7 font-weight-bold">
-                                {{ item.text1 }}
-                              </p>
-                            </div>
-                            <div class="text-center mb-12">
-                              <p class="text-h7 font-weight-bold">
-                                {{ item.text2 }}
-                              </p>
-                            </div>
-                            <div class="text-center">
-                              <p class="text-h7 font-weight-bold">
-                                {{ item.text3 }}
-                              </p>
-                            </div>
-                          </div>
-                        </v-card-text>
-                      </v-card>
-                    </v-list-item>
-                  </v-list>
-                </v-card-text>
-              </v-card>
-            </v-row>
-          </v-row>
-
-          <v-row>
-            <v-col class="align-center">
-              <h2 class="ml-15 mb-5 mt-15">Files</h2>
-              <v-icon color="black"> mdi-dots-horizontal </v-icon>
-              <v-list-item
-                v-for="(item, i) in listCard"
-                :key="i"
-                class="mt-6 mb-10 align-center"
-              >
-                <v-card
-                  class="rounded-xl elevation-8"
-                  width="750"
-                  height="150"
-                  v-bind:class="{ selected: selected }"
-                  v-on:mouseover="selected = true"
-                  v-on:mouseout="selected = false"
-                >
-                  <v-card-text>
-                    <div class="d-flex align-center ma-5 ml-7">
-                      <v-card
-                        height="65"
-                        width="65"
-                        class="rounded-lg mr-5"
-                        color="dark"
-                      >
-                        <v-card-text class="d-flex align-center justify-center">
-                          <v-icon large color="black">{{ item.icon }}</v-icon>
-                        </v-card-text>
-                      </v-card>
-                      <div class="mr-auto">
-                        <p
-                          class="text-h5 text--primary"
-                          :class="{ 'text--lighten-1': selected }"
+          <v-container>
+            <v-row class="mb-15" justify="center">
+              <div>
+                <v-row class="py-9" align="center" justify="space-between">
+                  <h3 style="font-size: 25px">Meeting</h3>
+                  <div class="mr-3">
+                    <span class="mr-3 font-weight-bold" style="font-size: 18px">Aug 3, 2021 - Aug 7, 2021</span>
+                    <v-icon color="black">mdi-menu-down-outline</v-icon>
+                  </div>
+                </v-row>
+                <v-row>
+                  <v-card color="#FDF7F2" class="rounded-xl">
+                    <v-card-text>
+                      <v-list color="transparent">
+                        <v-list-item
+                          v-for="(item, i) in items"
+                          :key="i"
+                          class="mt-6 mb-10 d-inline-flex"
+                          style="max-width: 20%"
                         >
-                          {{ item.titre }}
-                        </p>
-                        <p>{{ item.heure }}</p>
+                          <v-card
+                            class="rounded-xl elevation-0"
+                            height="350"
+                            color="transparent"
+                            v-bind:class="{ selected: selected }"
+                            v-on:mouseover="selected = true"
+                            v-on:mouseout="selected = false"
+                          >
+                            <v-card-text>
+                              <div class="d-flex flex-column">
+                                <v-card
+                                  width="80"
+                                  class="rounded-lg mb-6"
+                                  color="#FBE9E7"
+                                >
+                                  <v-card-text
+                                    class="d-flex align-center justify-center"
+                                  >
+                                    <span
+                                      class="text-center font-weight-bold"
+                                      style="
+                                        font-size: 25px;
+                                        line-height: 34px;
+                                        color: black;
+                                      "
+                                      >{{ item.title }}</span
+                                    >
+                                  </v-card-text>
+                                </v-card>
+                                <div class="text-center mb-12">
+                                  <p class="text-h7 font-weight-bold">
+                                    {{ item.text1 }}
+                                  </p>
+                                </div>
+                                <div class="text-center mb-12">
+                                  <p class="text-h7 font-weight-bold">
+                                    {{ item.text2 }}
+                                  </p>
+                                </div>
+                                <div class="text-center">
+                                  <p class="text-h7 font-weight-bold">
+                                    {{ item.text3 }}
+                                  </p>
+                                </div>
+                              </div>
+                            </v-card-text>
+                          </v-card>
+                        </v-list-item>
+                      </v-list>
+                    </v-card-text>
+                  </v-card>
+                </v-row>
+              </div>
+            </v-row>
+          </v-container>
+
+          <v-container>
+            <v-row class="mt-10" justify="center">
+              <div style="min-width: 95%">
+                <v-row class="mb-3" align="center" justify="space-between">
+                  <h2 class="ml-4" style="font-size: 25px">Files</h2>
+                  <span class="font-weight-bold mr-4" style="font-size: 18px"
+                    >View all
+                    <v-icon color="black">mdi-arrow-right</v-icon>
+                  </span>
+                </v-row>
+
+                <v-list-item
+                  v-for="(item, i) in listCard"
+                  :key="i"
+                  class="mt-6 mb-10 pa-0 align-center"
+                >
+                  <v-card
+                    style="border: 2px solid black"
+                    class="rounded-xl elevation-0"
+                    width="100%"
+                    height="150"
+                    v-bind:class="{ selected: selected }"
+                    v-on:mouseover="selected = true"
+                    v-on:mouseout="selected = false"
+                  >
+                    <v-card-text>
+                      <div class="d-flex align-center ma-5 ml-7">
+                        <v-card
+                          style="background-color: #1e1e1e"
+                          height="65"
+                          width="65"
+                          class="rounded-lg mr-5"
+                          color="dark"
+                        >
+                          <v-card-text
+                            class="pa-0 d-flex align-center justify-center"
+                          >
+                            <v-img src="../assets/logo-figma.png" large color="black"/> 
+                          </v-card-text>
+                        </v-card>
+                        <div class="mr-auto">
+                          <p
+                            class="text-h5 text--primary"
+                            :class="{ 'text--lighten-1': selected }"
+                          >
+                            {{ item.titre }}
+                          </p>
+                          <p>{{ item.heure }}</p>
+                        </div>
+                        <div align="center" class="text--primary d-flex">
+                          <span style="font-size: 20px" class="mr-5">{{
+                            item.weight
+                          }}</span>
+                          <v-icon>{{ item.download }}</v-icon>
+                        </div>
                       </div>
-                      <div class="text--primary d-flex">
-                        <p>{{ item.weight }}</p>
-                        <v-icon>{{ item.download }}</v-icon>
-                      </div>
-                    </div>
-                  </v-card-text>
-                </v-card>
-              </v-list-item>
-            </v-col>
-          </v-row>
+                    </v-card-text>
+                  </v-card>
+                </v-list-item>
+              </div>
+            </v-row>
+          </v-container>
         </v-col>
       </v-row>
     </v-container>
@@ -339,7 +368,7 @@ export default {
       listCard: [
         {
           id: 1,
-          icon: "mdi-scale-balance",
+          icon: "../assets/logo-figma.png",
           //groupe d'avatar
           heure: "Aug 5 , 2021 at 9:50 AM",
           titre: "User flow.fig",
@@ -348,7 +377,7 @@ export default {
         },
         {
           id: 2,
-          icon: "mdi-cube",
+          icon: "../assets/logo-figma.png",
           //groupe d'avatar
           heure: "Aug 5 , 2021 at 9:20 AM",
           titre: "Design system.fig",
@@ -357,7 +386,7 @@ export default {
         },
         {
           id: 3,
-          icon: "mdi-file-document-outline",
+          icon: "../assets/logo-json.png",
           //groupe d'avatar
           heure: "Aug 5 , 2021 at 9:05 AM",
           titre: "Animation.json",
